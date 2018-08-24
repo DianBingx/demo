@@ -2,9 +2,11 @@
 
 public class GameManager : MonoBehaviour
 {
+
     static GameManager cur;
-    public int cycleTime = 60;
-    private float fixedTime = 0;
+
+    public static string loadName;
+
     void Awake()
     {
         if (cur) Destroy(cur.gameObject);
@@ -12,8 +14,6 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        Screen.sleepTimeout = SleepTimeout.NeverSleep; //永不休眠
-        Application.targetFrameRate = 30; //帧频设置为30帧
         DontDestroyOnLoad(gameObject);
     }
 
